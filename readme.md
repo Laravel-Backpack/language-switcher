@@ -17,25 +17,26 @@ Try it right now, in [our online demo](https://demo.backpackforlaravel.com/admin
 
 ## Installation
 
-In your Laravel project, install this package:
+1) In your Laravel project, install this package:
 
 ```bash
 composer require backpack/multi-language
 ```
 
-Add the dropdown view to `topbar_right_content.blade.php` or wherever you need it,
+2) Add the dropdown view to `topbar_right_content.blade.php` or wherever you need it:
 
 ```php
 @include('backpack.multi-language::multi-language-dropdown')
 ```
 
-In order to add the available languages of your app, you'll need to publish the 
+3) In order to add the available languages of your app, you'll need to publish and edit the config file:
 
 ```bash
 php artisan vendor:publish --provider="Backpack\MultiLanguage\MultiLanguageServiceProvider" --tag=config
 ```
 
-There you can set the array of `locales` your app uses.
+There you can set the array of `locales` your app uses.  
+Keep in mind the default locale of your app should remain in `config.app.locale` and `config.app.fallback_locale`.
 
 ## Usage
 
@@ -53,14 +54,14 @@ You can do it by sending special arguments to the component:
 ### Can I use this package outside of the backpack/admin scope?
 **Yes!**  
 If you wish to use the language setter on other parts of your app, you can do it by enabling the middlewares in the config `middleware-groups`.
-You can enable this for the whole `web` middleware group, or the `api`.
+You can, for instance, enable this for the whole `web` middleware group, or the `api`.
 
 
 ## Notes
 
 This package uses;
-1) `outhebox/blade-flags` package to get the flags representing languages/locales.
-2) `whitecube/lingua` to get the native language names.
+1) [`outhebox/blade-flags`](https://github.com/MohmmedAshraf/blade-flags) to get the flags representing languages/locales.
+2) [`whitecube/lingua`](https://github.com/whitecube/lingua) to get the native language names.
 
 If you found any issue with any of these, like a missing flag or a wrong native name, you can report directly on the maintainer repositories.
 
