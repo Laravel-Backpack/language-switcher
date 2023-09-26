@@ -36,17 +36,20 @@ _Optionally, you may add the middleware to the `web`, `api` or other middleware 
 3) Add the dropdown view to `topbar_right_content.blade.php` or wherever you need it:
 
 ```php
-@include('backpack.language-switcher::LanguageSwitcher')
+@include('backpack.language-switcher::language-switcher')
 ```
 
-4) In order to add the available languages of your app, you'll need to publish and edit the config file:
+4) In order to add the available languages of your app, you'll need to enable them in the backpack crud config file `config/backpack/crud.php`
 
 ```bash
-php artisan vendor:publish --provider="Backpack\LanguageSwitcher\LanguageSwitcherServiceProvider" --tag=config
+'locales' => [
+    'en' => 'English',
+    'pt' => 'Portuguese',
+    'ro' => 'Romanian',
+    ...
 ```
 
-There you can set the array of `locales` your app uses.  
-Keep in mind the default locale of your app should remain in `config.app.locale` and `config.app.fallback_locale`.
+There you can set the array of `locales` your app uses.  Keep in mind the default locale of your app should remain in `config.app.locale` and `config.app.fallback_locale`.
 
 ## Usage
 
