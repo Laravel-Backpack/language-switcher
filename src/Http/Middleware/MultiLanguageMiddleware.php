@@ -23,7 +23,7 @@ class MultiLanguageMiddleware
         if (Session::has($key)) {
             App::setLocale(Session::get($key));
         } else {
-            $availableLocales = config('backpack.multi-language.locales');
+            $availableLocales = array_keys(config('backpack.crud.locales'));
             $userLocales = preg_split('/,|;/', $request->server('HTTP_ACCEPT_LANGUAGE'));
 
             foreach ($userLocales as $locale) {

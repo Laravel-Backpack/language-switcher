@@ -1,6 +1,6 @@
 <?php
 
-use Backpack\MultiLanguage\Http\Controllers\MultiLanguageCrudController;
+use Backpack\MultiLanguage\Http\Controllers\MultiLanguageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ Route::group([
     'middleware' => ['web', config('backpack.base.middleware_key', 'admin'), 'throttle:60,1'],
 ], function () {
     // set locale
-    Route::any('locale/{locale}', [MultiLanguageCrudController::class, 'setLocale'])
+    Route::any('set-locale/{locale}', [MultiLanguageController::class, 'setLocale'])
         ->where('locale', '[a-z]{2}(-[a-zA-Z]{2})?')
         ->name('multi-language.locale');
 });
