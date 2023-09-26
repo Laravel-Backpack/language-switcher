@@ -23,13 +23,23 @@ Try it right now, in [our online demo](https://demo.backpackforlaravel.com/admin
 composer require backpack/language-switcher
 ```
 
-2) Add the dropdown view to `topbar_right_content.blade.php` or wherever you need it:
+2) Add the middleware to backpack config `config/backpack/base.php`:
+```php
+'middleware_class' => [
+    ...
+    \Backpack\LanguageSwitcher\Http\Middleware\LanguageSwitcherMiddleware::class,
+],
+```
+_Optionally, you may add the middleware to the `web`, `api` or other middleware groups where you may want to use the language switcher, in `app/Http/Kernel.php`._
+
+
+3) Add the dropdown view to `topbar_right_content.blade.php` or wherever you need it:
 
 ```php
 @include('backpack.language-switcher::LanguageSwitcher')
 ```
 
-3) In order to add the available languages of your app, you'll need to publish and edit the config file:
+4) In order to add the available languages of your app, you'll need to publish and edit the config file:
 
 ```bash
 php artisan vendor:publish --provider="Backpack\LanguageSwitcher\LanguageSwitcherServiceProvider" --tag=config
@@ -53,8 +63,16 @@ You can do it by sending special arguments to the component:
 
 ### Can I use this package outside of the backpack/admin scope?
 **Yes!**  
-If you wish to use the language setter on other parts of your app, you can do it by enabling the middlewares in the config `middleware-groups`.
+If you wish to use the language switcher on other parts of your app, you can do it by adding the middleware in `app/Http/Kernel.php`.
 You can, for instance, enable this for the whole `web` middleware group, or the `api`.
+
+```php
+protected $middlewareGroups = [
+    'web' => [
+        ...
+        \Backpack\LanguageSwitcher\Http\Middleware\LanguageSwitcherMiddleware::class,
+    ],
+```
 
 
 ## Notes
@@ -63,7 +81,7 @@ This package uses;
 1) [`outhebox/blade-flags`](https://github.com/MohmmedAshraf/blade-flags) to get the flags representing languages/locales.
 2) [`whitecube/lingua`](https://github.com/whitecube/lingua) to get the native language names.
 
-If you found any issue with any of these, like a missing flag or a wrong native name, you can report directly on the maintainer repositories.
+If you find any issue with any of these, like a missing flag or a wrong native name, you can report directly to the maintainer repositories.
 
 
 ## Security
