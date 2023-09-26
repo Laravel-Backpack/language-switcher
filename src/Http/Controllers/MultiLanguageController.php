@@ -8,17 +8,17 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Session;
 
 /**
- * Class MultiLanguageCrudController
+ * Class MultiLanguageController
  * @package Backpack\MultiLanguage\Http\Controllers
  */
-class MultiLanguageCrudController extends Controller
+class MultiLanguageController extends Controller
 {
     /**
      * Set's the app locale
      */
     public function setLocale(string $locale): Redirector | RedirectResponse
     {
-        if (in_array($locale, config('backpack.multi-language.locales'))) {
+        if (in_array($locale, array_keys(config('backpack.crud.locales')))) {
             Session::put('backpack.multi-language.locale', $locale);
         }
 
