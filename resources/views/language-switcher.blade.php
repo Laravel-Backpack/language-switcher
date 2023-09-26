@@ -1,6 +1,6 @@
-@inject('helper', 'Backpack\MultiLanguage\Helpers\MultiLanguageHelper')
+@inject('helper', 'Backpack\LanguageSwitcher\Helpers\LanguageSwitcherHelper')
 
-<li class="nav-item me-2 dropdown multi-language">
+<li class="nav-item me-2 dropdown language-switcher">
     <a class="nav-link dropdown-toggle text-decoration-none" data-bs-toggle="dropdown" data-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" style="cursor: pointer">
         @if($flags ?? true)
         <span class="nav-link-icon" style="width: fit-content">
@@ -16,7 +16,7 @@
     <ul class="dropdown-menu dropdown-menu-right dropdown-menu-end" style="right: 0">
         @foreach(config('backpack.crud.locales', []) as $locale => $name)
         <li>
-            <a class="dropdown-item {{ $locale === $helper->getCurrentLocale() ? 'active disabled' : '' }}" href="{{ route('multi-language.locale', $locale) }}">
+            <a class="dropdown-item {{ $locale === $helper->getCurrentLocale() ? 'active disabled' : '' }}" href="{{ route('language-switcher.locale', $locale) }}">
                 @if($flags ?? true)
                 <span class="nav-link-icon" style="width: fit-content">
                     <x-dynamic-component component="flag-{{ $helper->getFlagOrFallback($locale) }}" style="width: 1.5rem" />

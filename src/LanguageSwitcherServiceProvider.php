@@ -1,14 +1,14 @@
 <?php
 
-namespace Backpack\MultiLanguage;
+namespace Backpack\LanguageSwitcher;
 
 use Illuminate\Support\ServiceProvider;
 
-class MultiLanguageServiceProvider extends ServiceProvider
+class LanguageSwitcherServiceProvider extends ServiceProvider
 {
     use AutomaticServiceProvider;
 
     protected $vendorName = 'backpack';
-    protected $packageName = 'multi-language';
+    protected $packageName = 'language-switcher';
     protected $commands = [];
 }

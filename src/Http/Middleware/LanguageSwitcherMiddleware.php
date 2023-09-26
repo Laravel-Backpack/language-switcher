@@ -1,13 +1,13 @@
 <?php
 
-namespace Backpack\MultiLanguage\Http\Middleware;
+namespace Backpack\LanguageSwitcher\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
-class MultiLanguageMiddleware
+class LanguageSwitcherMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,7 @@ class MultiLanguageMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $key = 'backpack.multi-language.locale';
+        $key = 'backpack.language-switcher.locale';
 
         if (Session::has($key)) {
             App::setLocale(Session::get($key));

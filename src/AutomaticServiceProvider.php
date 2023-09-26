@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\MultiLanguage;
+namespace Backpack\LanguageSwitcher;
 
 use Backpack\CRUD\ViewNamespaces;
 
