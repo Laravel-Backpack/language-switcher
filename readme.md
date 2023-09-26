@@ -1,11 +1,11 @@
-# Multi Language
+# Language Switcher
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![The Whole Fruit Manifesto](https://img.shields.io/badge/writing%20standard-the%20whole%20fruit-brightgreen)](https://github.com/the-whole-fruit/manifesto)
 
 
-This package adds a multi language dropdown for projects using [Backpack for Laravel](https://backpackforlaravel.com/).
+This package adds a Language Switcher dropdown for projects using [Backpack for Laravel](https://backpackforlaravel.com/).
 
 ## Preview
 
@@ -20,19 +20,19 @@ Try it right now, in [our online demo](https://demo.backpackforlaravel.com/admin
 1) In your Laravel project, install this package:
 
 ```bash
-composer require backpack/multi-language
+composer require backpack/language-switcher
 ```
 
 2) Add the dropdown view to `topbar_right_content.blade.php` or wherever you need it:
 
 ```php
-@include('backpack.multi-language::multi-language-dropdown')
+@include('backpack.language-switcher::LanguageSwitcher')
 ```
 
 3) In order to add the available languages of your app, you'll need to publish and edit the config file:
 
 ```bash
-php artisan vendor:publish --provider="Backpack\MultiLanguage\MultiLanguageServiceProvider" --tag=config
+php artisan vendor:publish --provider="Backpack\LanguageSwitcher\LanguageSwitcherServiceProvider" --tag=config
 ```
 
 There you can set the array of `locales` your app uses.  
@@ -45,7 +45,7 @@ Keep in mind the default locale of your app should remain in `config.app.locale`
 You can do it by sending special arguments to the component:
 
 ```php
-@include('backpack.multi-language::multi-language-dropdown', [
+@include('backpack.language-switcher::LanguageSwitcher', [
     'flags' => true, // true by default, change it to hide flags
     'main_label' => false, // false by default, change it to show the current locale label
 ])
@@ -80,10 +80,10 @@ If you discover any security related issues, please email cristian.tabacitu@back
 
 This project was released under MIT License, so you can install it on top of any Backpack & Laravel project. Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/backpack/multi-language.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/backpack/multi-language.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/backpack/language-switcher.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/backpack/language-switcher.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/backpack/multi-language
-[link-downloads]: https://packagist.org/packages/backpack/multi-language
+[link-packagist]: https://packagist.org/packages/backpack/language-switcher
+[link-downloads]: https://packagist.org/packages/backpack/language-switcher
 [link-author]: https://github.com/backpack
 [link-contributors]: ../../contributors

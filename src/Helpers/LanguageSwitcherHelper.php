@@ -1,13 +1,13 @@
 <?php
 
-namespace Backpack\MultiLanguage\Helpers;
+namespace Backpack\LanguageSwitcher\Helpers;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use WhiteCube\Lingua\Service as Lingua;
 
-class MultiLanguageHelper
+class LanguageSwitcherHelper
 {
     /**
      * Get current locale

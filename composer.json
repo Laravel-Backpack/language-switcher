@@ -1,6 +1,6 @@
 {
-    "name": "backpack/multi-language",
-    "description": "Multi Language for Backpack",
+    "name": "backpack/language-switcher",
+    "description": "Language Switcher for Backpack",
     "license": "MIT",
     "authors": [
         {
@@ -14,7 +14,7 @@
             "homepage": "https://backpackforlaravel.com"
         }
     ],
-    "homepage": "https://github.com/backpack/multi-language",
+    "homepage": "https://github.com/backpack/language-switcher",
     "keywords": [
         "Laravel", "Backpack", "Backpack for Laravel", "Backpack Addon", "Language", "Locale"
     ],
@@ -31,13 +31,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Backpack\\MultiLanguage\\": "src/"
+            "Backpack\\LanguageSwitcher\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Backpack\\MultiLanguage\\MultiLanguageServiceProvider"
+                "Backpack\\LanguageSwitcher\\LanguageSwitcherServiceProvider"
             ]
         }
     }
