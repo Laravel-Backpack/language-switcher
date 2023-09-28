@@ -4,8 +4,6 @@ namespace Backpack\LanguageSwitcher\Helpers;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
-use WhiteCube\Lingua\Service as Lingua;
 
 class LanguageSwitcherHelper
 {
@@ -14,23 +12,19 @@ class LanguageSwitcherHelper
      */
     public function getCurrentLocale(): string
     {
-        return strtolower(App::getLocale());
+        return App::getLocale();
     }
 
     /**
-     * Get native language name
+     * Get a locale name from config/backpack/crud.php
      */
-    public function getLocaleNativeName(?string $locale = null): string
+    public function getLocaleName(string $locale): ?string
     {
-        $locale ??= $this->getCurrentLocale();
-        $locale = str_replace('-', '_', strtolower($locale));
-        $suffix = str_contains($locale, '_') ? ' ('.strtoupper(Str::after($locale, '_')).')' : '';
-
-        return ucwords(Lingua::createFromPHP($locale)->toNative()).$suffix;
+        return config("backpack.crud.locales.$locale");
     }
 
     /**
-     * Get most appropriate fallback in case the flag is not present
+     * Get a flag or the most appropriate fallback in case the flag is not present
      */
     public function getFlagOrFallback(string $locale): string
     {

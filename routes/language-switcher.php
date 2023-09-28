@@ -17,6 +17,6 @@ Route::group([
 ], function () {
     // set locale
     Route::any('set-locale/{locale}', [LanguageSwitcherController::class, 'setLocale'])
-        ->where('locale', '[a-z]{2}(-[a-zA-Z]{2})?')
+        ->where('locale', '[a-z]{2}((-|_)[a-zA-Z]{2})?')
         ->name('language-switcher.locale');
 });
