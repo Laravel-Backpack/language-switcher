@@ -23,8 +23,7 @@
     },
     "require": {
         "backpack/crud": "^6.0",
-        "outhebox/blade-flags": "^1.2",
-        "whitecube/lingua": "^1.1"
+        "outhebox/blade-flags": "^1.2"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.10"

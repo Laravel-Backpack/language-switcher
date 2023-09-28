@@ -80,11 +80,9 @@ protected $middlewareGroups = [
 
 ## Notes
 
-This package uses;
-1) [`outhebox/blade-flags`](https://github.com/MohmmedAshraf/blade-flags) to get the flags representing languages/locales.
-2) [`whitecube/lingua`](https://github.com/whitecube/lingua) to get the native language names.
+This package uses [`outhebox/blade-flags`](https://github.com/MohmmedAshraf/blade-flags) to get the flags representing languages/locales.
 
-If you find any issue with any of these, like a missing flag or a wrong native name, you can report directly to the maintainer repositories.
+If you find any issue with any with it, like a missing or wrong flag, you can report directly to the maintainer.
 
 
 ## Security
