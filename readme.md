@@ -60,7 +60,7 @@ You can do it by sending special arguments to the component:
 ```php
 @include('backpack.language-switcher::LanguageSwitcher', [
     'flags' => true, // true by default, change it to hide flags
-    'main_label' => false, // false by default, change it to show the current locale label
+    'main_label' => false, // false by default, it may also be a string, for instance "Language"
 ])
 ```
 
