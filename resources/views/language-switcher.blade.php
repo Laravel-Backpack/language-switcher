@@ -9,7 +9,7 @@
         @endif
         @if($main_label ?? false || (($flags ?? true) === false && !isset($main_label)))
         <span class="nav-link-title">
-            {{ $helper->getLocaleNativeName() }}
+            {{ is_string($main_label ?? false) ? $main_label : $helper->getLocaleName($helper->getCurrentLocale()) }}
         </span>
         @endif
     </a>
@@ -23,7 +23,7 @@
                 </span>
                 @endif
                 <span class="nav-link-title">
-                    {{ $helper->getLocaleNativeName($locale) }}
+                    {{ $name }}
                 </span>
             </a>
         </li>

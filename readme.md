@@ -60,7 +60,7 @@ You can do it by sending special arguments to the component:
 ```php
 @include('backpack.language-switcher::LanguageSwitcher', [
     'flags' => true, // true by default, change it to hide flags
-    'main_label' => false, // false by default, change it to show the current locale label
+    'main_label' => false, // false by default, it may also be a string, for instance "Language"
 ])
 ```
 
@@ -80,11 +80,9 @@ protected $middlewareGroups = [
 
 ## Notes
 
-This package uses;
-1) [`outhebox/blade-flags`](https://github.com/MohmmedAshraf/blade-flags) to get the flags representing languages/locales.
-2) [`whitecube/lingua`](https://github.com/whitecube/lingua) to get the native language names.
+This package uses [`outhebox/blade-flags`](https://github.com/MohmmedAshraf/blade-flags) to get the flags representing languages/locales.
 
-If you find any issue with any of these, like a missing flag or a wrong native name, you can report directly to the maintainer repositories.
+If you find any issue with any with it, like a missing or wrong flag, you can report directly to the maintainer.
 
 
 ## Security
