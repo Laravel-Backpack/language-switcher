@@ -13,7 +13,7 @@ use Backpack\LanguageSwitcher\Http\Controllers\LanguageSwitcherController;
 */
 Route::group([
     'namespace' => 'Backpack\LanguageSwitcher\Http\Controllers',
-    'middleware' => ['web', config('backpack.base.middleware_key', 'admin'), 'throttle:60,1'],
+    'middleware' => ['web', 'throttle:60,1'],
 ], function () {
     // set locale
     Route::any('set-locale/{locale}', [LanguageSwitcherController::class, 'setLocale'])
