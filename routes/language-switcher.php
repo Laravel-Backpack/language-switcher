@@ -1,7 +1,5 @@
 <?php
-
-use Backpack\LanguageSwitcher\Http\Controllers\LanguageSwitcherController;
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Backpack\LanguageSwitcher Routes
@@ -11,11 +9,13 @@ use Backpack\LanguageSwitcher\Http\Controllers\LanguageSwitcherController;
 | handled by the Backpack\LanguageSwitcher package.
 |
 */
-Route::group([
-    'namespace' => 'Backpack\LanguageSwitcher\Http\Controllers',
-    'middleware' => ['web', 'throttle:60,1'],
-], function () {
-    // set locale
-    Route::any('set-locale/{locale}', [LanguageSwitcherController::class, 'setLocale'])
-        ->name('language-switcher.locale');
-});
+if(config('backpack.language-switcher.setup_routes')) {
+    Route::group([
+        'middleware' => ['web', 'throttle:60,1'],
+    ], function () {
+        // set locale
+        Route::any('{backpack_prefix?}/set-locale/{locale}', [\Backpack\LanguageSwitcher\Http\Controllers\LanguageSwitcherController::class, 'setLocale'])
+            ->name('language-switcher.locale')->where('backpack_prefix', config('backpack.base.route_prefix'));
+    });
+}
+
