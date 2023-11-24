@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 | handled by the Backpack\LanguageSwitcher package.
 |
 */
-if(config('backpack.language-switcher.setup_routes')) {
+if(config('backpack.language-switcher.setup_routes', true)) {
     Route::group([
         'middleware' => ['web', 'throttle:60,1'],
     ], function () {
