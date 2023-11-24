@@ -16,7 +16,7 @@
     <ul class="dropdown-menu dropdown-menu-right dropdown-menu-end" style="right: 0">
         @foreach(config('backpack.crud.locales', []) as $locale => $name)
         <li>
-            <a class="dropdown-item {{ $locale === $helper->getCurrentLocale() ? 'active disabled' : '' }}" href="{{ route('language-switcher.locale', $locale) }}">
+            <a class="dropdown-item {{ $locale === $helper->getCurrentLocale() ? 'active disabled' : '' }}" href="{{ route('language-switcher.locale', ['locale' => $locale, 'backpack_prefix' => config('backpack.language-switcher.use_backpack_route_prefix_on_admin_routes') ? config('backpack.base.route_prefix') : null]) }}">
                 @if($flags ?? true)
                 <span class="nav-link-icon" style="width: fit-content">
                     <x-dynamic-component component="flag-{{ $helper->getFlagOrFallback($locale) }}" style="width: 1.5rem" />

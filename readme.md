@@ -21,6 +21,9 @@ Try it right now, in [our online demo](https://demo.backpackforlaravel.com/admin
 
 ```bash
 composer require backpack/language-switcher
+
+# optional: publish the config file
+php artisan vendor:publish --provider="Backpack\LanguageSwitcher\LanguageSwitcherServiceProvider" --tag="config"
 ```
 
 2) Add the middleware to backpack config `config/backpack/base.php`:
@@ -77,6 +80,12 @@ protected $middlewareGroups = [
     ],
 ```
 
+### Can I customize the endpoint routes ? 
+**Yes!**
+You can do it by publishing the config file `php artisan vendor:publish --provider="Backpack\LanguageSwitcher\LanguageSwitcherServiceProvider" --tag="config"`.
+There you can totally disable the package route and register your own, or change some behavior related with display urls.
+
+Please take caution to protect the endpoint with throttling or any other security measure if you overwrite the routes. The default package route uses: `'throttle:60,1'`
 
 ## Notes
 
