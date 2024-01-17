@@ -8,5 +8,5 @@ return [
     // when true, if the page where the picker is displayed use the `backpack route prefix` in the route, 
     // we will also add the route prefix on the language-switcher route.
     // eg: https://domain.com/admin/set-locale/{locale} instead of https://domain.com/set-locale/{locale}
-    'use_backpack_route_prefix_on_admin_routes' => false,
+    'use_backpack_route_prefix' => false,
 ];

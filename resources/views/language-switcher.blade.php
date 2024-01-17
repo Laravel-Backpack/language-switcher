@@ -15,7 +15,7 @@
     </a>
     <ul class="dropdown-menu dropdown-menu-right dropdown-menu-end" style="right: 0">
         @php
-            $useAdminPrefix = config('backpack.language-switcher.use_backpack_route_prefix_on_admin_routes');
+            $useAdminPrefix = config('backpack.language-switcher.use_backpack_route_prefix');
         @endphp
         @foreach(config('backpack.crud.locales', []) as $locale => $name)
         <li>
