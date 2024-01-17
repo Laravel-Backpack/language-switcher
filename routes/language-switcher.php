@@ -1,6 +1,6 @@
 <?php
 
-use Backpack\LanguageSwitcher\Http\Controllers\LanguageSwitcherController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
