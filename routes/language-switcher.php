@@ -14,8 +14,10 @@ if(config('backpack.language-switcher.setup_routes', true)) {
         'middleware' => ['web', 'throttle:60,1'],
     ], function () {
         // set locale
-        Route::any('{backpack_prefix?}/set-locale/{locale}', [\Backpack\LanguageSwitcher\Http\Controllers\LanguageSwitcherController::class, 'setLocale'])
-            ->name('language-switcher.locale')->where('backpack_prefix', config('backpack.base.route_prefix'));
+        Route::any('{backpack_prefix?}/{setLocale}/{locale?}', [\Backpack\LanguageSwitcher\Http\Controllers\LanguageSwitcherController::class, 'setLocale'])
+            ->name('language-switcher.locale')
+            ->whereIn('setLocale', array_merge(['set-locale'],array_keys(config('backpack.crud.locales'))))
+            ->whereIn('backpack_prefix', ['set-locale', config('backpack.base.route_prefix')]);
     });
 }
 
