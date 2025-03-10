@@ -22,7 +22,7 @@
         "analyse": "./vendor/bin/phpstan analyse --level 5 src"
     },
     "require": {
-        "backpack/crud": "^6.0",
+        "backpack/crud": "^6.7",
         "outhebox/blade-flags": "^1.2"
     },
     "require-dev": {
