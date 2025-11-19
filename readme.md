@@ -61,7 +61,7 @@ There you can set the array of `locales` your app uses.  Keep in mind the defaul
 You can do it by sending special arguments to the component:
 
 ```php
-@include('backpack.language-switcher::LanguageSwitcher', [
+@include('backpack.language-switcher::language-switcher', [
     'flags' => true, // true by default, change it to hide flags
     'main_label' => false, // false by default, it may also be a string, for instance "Language"
 ])
